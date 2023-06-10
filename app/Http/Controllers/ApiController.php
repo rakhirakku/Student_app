@@ -40,8 +40,9 @@ class ApiController extends Controller
     public function index()
     {
         $records = Student::select('name', 'type', 'description')->paginate(10);
-
-        return response()->json($records);
+        // json_encode()
+        return view('student_view',  ['records' => json_encode($records)]);
+        // return response()->json($records);
     }
 
     public function show($id)

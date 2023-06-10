@@ -13,7 +13,7 @@
             text-align: center; 
             text-decoration: underline
             }
-            form{
+            table{
             font-family: verdana; 
             color:white; 
             font-size: 16px; 
@@ -22,7 +22,6 @@
             background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);  
             border-collapse: collapse; 
             border: 4px solid #000000;
-            border-style: dashed;
             
             }
             table.inner{
@@ -34,7 +33,7 @@
             margin: 5px 0;
             box-sizing: border-box;
             }
-            input[type=submit], input[type=reset]{
+            button[type=submit], input[type=reset]{
             width: 15%;
             padding: 8px 12px;
             margin: 5px 0;
@@ -43,26 +42,56 @@
         </style>
     </head>
     <body>
-        <h2>Student Data Form</h3>
+        <center>
         <form action="api/save-record" method="POST" enctype="multipart/form-data">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" maxlength="50" required>
-            <br><br>
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" maxlength="250" rows="10" cols="50" required></textarea>
-            <br><br>
-            <label for="file">Image (Max 5MB):</label>
-            <input type="file" id="file" name="file" accept="image/*" required>
-            <br><br>
-            <label for="type">Type:</label>
-            <select id="type" name="type" required>
-                <option value="1">Type 1</option>
-                <option value="2">Type 2</option>
-                <option value="3">Type 3</option>
-            </select>
-            <br><br>
-            <button type="submit">Submit</button>
-        </form>
+            <table>
+                <thead>
+                    <h2>Student Data Form</h3>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                    <label for="name">Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" name="name" maxlength="50" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label for="description">Description:</label>
+                    </td>
+                    <td>
+                        <textarea id="description" name="description" maxlength="250" rows="10" cols="50" required></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="file">Image (Max 5MB):</label>
+                    </td>
+                    <td>
+                    <input type="file" id="file" name="file" accept="image/*" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="type">Type:</label>
+                    </td>
+                    <td>
+                        <select id="type" name="type" required>
+                            <option value="1">Type 1</option>
+                            <option value="2">Type 2</option>
+                            <option value="3">Type 3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2>
+                    <center><button type="submit">Submit</button></center>
+                    </td>
+                <tr>
+
+        </form></center>
     </body>
 </html>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
